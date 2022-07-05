@@ -15,13 +15,13 @@ class BaseParser
         first_name: row['first_name'],
         last_name: row['last_name'],
         city: row['city'],
-        birthdate: Date.parse(row['birthdate']),
+        birthdate: sanitized_date(row['birthdate']),
       )
     end
 
     result
   end
-  
+
   private
 
   def rows
